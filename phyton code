@@ -1,0 +1,52 @@
+USERNAME = "admin123"
+PASSWORD = "vivo1234"
+
+def login():
+    username = input("Digite seu nome de usuário: ")
+    if username == USERNAME:
+        print("Nome de usuário correto!")
+    else:
+        print("Nome de usuário incorreto.")
+        return
+    
+    password = input("Digite sua senha: ")
+    if password == PASSWORD:
+        print("Senha correta!")
+        print("Login bem-sucedido! Bem-vindo admin123")
+        proximo_passo()
+    else:
+        print("Senha incorreta.")
+
+def proximo_passo():
+    print("Escolha uma opção:")
+    print("1. Ver informações")
+    print("2. Alterar senha")
+    print("3. Sair")
+    
+    escolha = input("Digite o número da sua escolha: ")
+    
+    if escolha == "1":
+        ver_informacoes()
+    elif escolha == "2":
+        alterar_senha()
+    elif escolha == "3":
+        sair()
+    else:
+        print("Opção inválida.")
+        proximo_passo()
+
+def ver_informacoes():
+    print("Suas informações são: Nome de usuário - admin123")
+    proximo_passo()
+
+def alterar_senha():
+    nova_senha = input("Digite sua nova senha: ")
+    global PASSWORD
+    PASSWORD = nova_senha
+    print("Senha alterada com sucesso!")
+    proximo_passo()
+
+def sair():
+    print("Saindo do sistema. Até logo!")
+
+login()
